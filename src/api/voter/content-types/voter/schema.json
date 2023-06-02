@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "voters",
+  "info": {
+    "singularName": "voter",
+    "pluralName": "voters",
+    "displayName": "voter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "father": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "panchayat": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::panchayat.panchayat",
+      "inversedBy": "voters"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "address": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    }
+  }
+}

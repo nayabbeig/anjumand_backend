@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "panchayats",
+  "info": {
+    "singularName": "panchayat",
+    "pluralName": "panchayats",
+    "displayName": "Panchayat",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "pid": {
+      "type": "string"
+    },
+    "voters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::voter.voter",
+      "mappedBy": "panchayat"
+    }
+  }
+}
